@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Convertor</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 20px ;
+        }
+        .section{
+            margin: 20px 0;
+            padding: 10px;
+            background-color: beige;
+            border-bottom: 1px solid grey;
+        }
+        button{
+            background-color: darkgreen;
+            color: white;
+            padding: 10px;
+        }
+        textarea{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JSON and Hash Convertor</h1>
+    <div class="section">
+        <h2>JSON to Object Converter</h2>
+        <textarea  id="jsonInput">{"name":"Likhith","age":30}</textarea>
+        <button onclick="convertJson()">Convert to Object</button>
+        <div id="jsonOutput" class="output"></div>
+    </div>
+    <div class="section">
+        <h2>JSON to Date</h2>
+        <textarea name="" id="dateInput">{"date":2024-04-20}</textarea>
+        <button onclick="convertDate()">Convert to Date</button>
+        <div id="dateOutput" class="output"></div>
+    </div>
+    <div class="section">
+        <h2>3. JSON ↔ CSV</h2>
+        <textarea id="dataInput">[{"name":"John","age":30},{"name":"Jane","age":25}]</textarea>
+        <button onclick="jsonToCsv()">To CSV</button>
+        <button onclick="csvToJson()">To JSON</button>
+        <div id="convertOutput" class="output"></div>
+    </div>
+
+    <script>
+        function convertJson(){
+            try{
+                let obj=JSON.parse(document.getElementById('jsonInput').value);
+                document.getElementById('jsonOutput').innerText=JSON.stringify(obj,null,2);
+            }catch(e){
+                document.getElementById('jsonOutput').innerText="Invalid JSON"
+            }
+        }
+        function convertDate() {
+            try {
+                let obj = JSON.parse(document.getElementById('dateInput').value);
+                let date = new Date(obj.date);
+                document.getElementById('dateOutput').innerText = date.toString();
+            } catch(e) {
+                document.getElementById('dateOutput').innerText = 'Invalid Date';
+            }
+        }
+        function csvToJson() {
+            try {
+                let csv = document.getElementById('dataInput').value;
+                let lines = csv.split('\n');
+                let headers = lines[0].split(',');
+                let result = lines.slice(1).map(line => {
+                    let obj = {};
+                    line.split(',').forEach((val, i) => obj[headers[i]] = val);
+                    return obj;
+                });
+                document.getElementById('convertOutput').innerText = 
+                    JSON.stringify(result, null, 2);
+            } catch(e) {
+                document.getElementById('convertOutput').innerText = 'Invalid CSV';
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

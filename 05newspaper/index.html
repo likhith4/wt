@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        header{
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 20px;
+            color:white;
+        }
+        header a{
+            color: white;
+            font-weight:bold;
+            font-size: 2em;
+            text-decoration: none;
+        }
+        nav{
+            background-color: #333;
+            padding: 10px;
+            margin: 10px 0px;
+            
+            
+        }
+        nav a{
+            text-decoration:none;
+            color:white;
+            margin: 0 50px 0 0;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        section{
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 20px;
+        }
+        article{
+            border-bottom: 1px solid #f0f0f0;
+            padding: 15px 0;
+        }
+        figure {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        figcaption{
+            font-style:italic;
+            color: brown;
+        }
+        table{
+            width:100%;
+            border-collapse: collapse;
+            margin 15px 0;
+        }
+        thead{
+            background-color: darkgreen ;
+            color: white;
+            font-weight:bold;
+            font-size:1rem;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        footer{
+            text-align: center;
+        }
+        aside{
+            
+            padding: 20px;
+            background-color: #e6e6e6;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">The Times Newpaper</a>
+        <p>Your Daily News</p>
+        
+
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">World</a>
+        <a href="#">Tech</a>
+        <a href="#">Sports</a>
+    </nav>
+    <main>
+        <div>
+            <section>
+                <h2>Latest News</h2>
+                <article>
+                    <h3>New Technology Breakthrough</h3>
+                    <p>Scientists have made new discovery</p>
+                    <figure>
+                        <img src="https://placehold.co/600x400" alt="image of article">
+                        <figcaption>Scientists working on new project</figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <h3>India wins gold in Hockey</h3>
+                    <p>Hkg becomes the top scorer</p>
+                    <figure>
+                        <img src="https://placehold.co/600x400" alt="image of article">
+                        <figcaption>Players celebrating</figcaption>
+                    </figure>
+                </article>
+                <h3>IPL Points Table</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>RCB</td>
+                            <td>56</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>CSK</td>
+                            <td>50</td>
+                        </tr>
+                        <tr></tr>
+                            <td>3</td>
+                            <td>MI</td>
+                            <td>45</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <aside>
+            <section>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Subscribe to Newsletter</li>
+                    <li>Advertise with Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 The Times Newspaper. All rights reserved.</p>
+    </footer>
+</body>
+</html>
